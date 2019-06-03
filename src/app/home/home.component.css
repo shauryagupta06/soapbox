@@ -1,0 +1,16 @@
+    
+.vertical-divider{
+    border-right:1px solid #ddd;
+}
+
+.background{
+
+    background-image: url('/assets/Dashboard-BG-Image.png');
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: left bottom;
+}
+
+.bg-dark{
+    color: antiquewhite;
+}
