@@ -1,26 +1,28 @@
-import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { AppRoutingModule } from './app-routing.module';
+import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 
 import { AppComponent } from './app.component';
-import { MenuComponent } from './menu/menu.component';
 import { SignupComponent } from './signup/signup.component';
 import { LoginComponent } from './login/login.component';
-import { HomeComponent } from './home/home.component';
+
 import { AuthService } from './auth.service';
+import { HomeComponent } from './home/home.component';
+import { AppRoutingModule } from './/app-routing.module';
+import { MenuComponent } from './menu/menu.component';
 import { MyblogsComponent } from './myblogs/myblogs.component';
 import { ProfileComponent } from './profile/profile.component';
-
-import {NgxEditorModule} from 'ngx-editor';
-import { HttpClientModule } from '@angular/common/http';
 import { CreateComponent } from './create/create.component';
+
+import { NgxEditorModule } from 'ngx-editor';
+import { HttpClientModule } from '@angular/common/http';
 import { PostComponent } from './post/post.component';
 import { ViewComponent } from './view/view.component';
-
+import { CommentsComponent } from './comments/comments.component';
+import { EditProfileComponent } from './edit-profile/edit-profile.component';
 let firebaseConfig = {
     apiKey: "AIzaSyDU1C2aATCx0AU6MoXnsEOBENse6tK1GPk",
     authDomain: "scribe-ac758.firebaseapp.com",
@@ -33,9 +35,29 @@ let firebaseConfig = {
 firebase.initializeApp(firebaseConfig); 
 
 @NgModule({
-  imports:      [ BrowserModule, FormsModule, ReactiveFormsModule, AppRoutingModule, NgxEditorModule, HttpClientModule],
-  declarations: [ AppComponent, MenuComponent, SignupComponent, LoginComponent, HomeComponent, MyblogsComponent, ProfileComponent, CreateComponent, PostComponent, ViewComponent ],
-  bootstrap:    [ AppComponent ],
-  providers: [AuthService]
+  declarations: [
+    AppComponent,
+    SignupComponent,
+    LoginComponent,
+    HomeComponent,
+    MenuComponent,
+    MyblogsComponent,
+    ProfileComponent,
+    CreateComponent,
+    PostComponent,
+    ViewComponent,
+    CommentsComponent,
+    EditProfileComponent,
+  ],
+  imports: [
+    BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
+    AppRoutingModule,
+    NgxEditorModule,
+    HttpClientModule
+  ],
+  providers: [AuthService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
